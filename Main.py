@@ -67,6 +67,12 @@ y_pred_training_norm = KNN.predict(X_train)
 train_accuracy_norm = metrics.accuracy_score(y_train, y_pred_training_norm)
 test_accuracy_norm = metrics.accuracy_score(y_test, y_pred_norm)
 
-# not better results with normalization. figured as much, since the dimensionality is high for this dataset.
+# not better results with normalization.
+# figured as much, since the dimensionality is high for this dataset.
+
 print(test_accuracy_norm, train_accuracy_norm)
+
+# i was going to plot the decision boundary... i literally have too many features </3
+
+# next is decision trees... i'm excited for this one !
 
