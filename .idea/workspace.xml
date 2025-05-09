@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="068bd094-3ce1-4755-ad56-68a1c5d030a0" name="Changes" comment="performed decision tree classification, including testing to find the best max depth for our dataset. finally, visualized errors and best tree">
+      <change afterPath="$PROJECT_DIR$/NaiveBayes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
@@ -57,6 +58,7 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Python.Main.executor": "Debug",
+    "Python.NaiveBayes.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -134,7 +136,31 @@
       <option name="project" value="LOCAL" />
       <updated>1746463962419</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="performed decision tree classification, including testing to find the best max depth for our dataset. finally, visualized errors and best tree">
+      <option name="closed" value="true" />
+      <created>1746469518352</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1746469518352</updated>
+    </task>
+    <task id="LOCAL-00008" summary="performed decision tree classification, including testing to find the best max depth for our dataset. finally, visualized errors and best tree">
+      <option name="closed" value="true" />
+      <created>1746469525702</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1746469525702</updated>
+    </task>
+    <task id="LOCAL-00009" summary="performed decision tree classification, including testing to find the best max depth for our dataset. finally, visualized errors and best tree">
+      <option name="closed" value="true" />
+      <created>1746469550101</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1746469550101</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,16 +179,5 @@
     <MESSAGE value="KNN classification and evaluation" />
     <MESSAGE value="performed decision tree classification, including testing to find the best max depth for our dataset. finally, visualized errors and best tree" />
     <option name="LAST_COMMIT_MESSAGE" value="performed decision tree classification, including testing to find the best max depth for our dataset. finally, visualized errors and best tree" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>136</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
