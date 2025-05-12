@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="068bd094-3ce1-4755-ad56-68a1c5d030a0" name="Changes" comment="noticed some issues in making one singular file, created separate files for each model. also started naive bayes!">
+    <list default="true" id="068bd094-3ce1-4755-ad56-68a1c5d030a0" name="Changes" comment="finished naive bayes, inputted a pre-made confusion matrix function (credits will be provided in report, but Dennis Trimarchi is the author of the function)">
+      <change afterPath="$PROJECT_DIR$/NeuralNetworks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DecisionTreesRandomForests.py" beforeDir="false" afterPath="$PROJECT_DIR$/DecisionTreesRandomForests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/KNN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NaiveBayes.py" beforeDir="false" afterPath="$PROJECT_DIR$/NaiveBayes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,9 +58,10 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Python.DecisionTreesRandomForests.executor": "Run",
-    "Python.KNN.executor": "Run",
+    "Python.KNN.executor": "Debug",
     "Python.Main.executor": "Debug",
     "Python.NaiveBayes.executor": "Run",
+    "Python.NeuralNetworks.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -171,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746806747812</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="finished naive bayes, inputted a pre-made confusion matrix function (credits will be provided in report, but Dennis Trimarchi is the author of the function)">
+      <option name="closed" value="true" />
+      <created>1746810172104</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1746810172104</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,6 +198,18 @@
     <MESSAGE value="KNN classification and evaluation" />
     <MESSAGE value="performed decision tree classification, including testing to find the best max depth for our dataset. finally, visualized errors and best tree" />
     <MESSAGE value="noticed some issues in making one singular file, created separate files for each model. also started naive bayes!" />
-    <option name="LAST_COMMIT_MESSAGE" value="noticed some issues in making one singular file, created separate files for each model. also started naive bayes!" />
+    <MESSAGE value="finished naive bayes, inputted a pre-made confusion matrix function (credits will be provided in report, but Dennis Trimarchi is the author of the function)" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished naive bayes, inputted a pre-made confusion matrix function (credits will be provided in report, but Dennis Trimarchi is the author of the function)" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/KNN.py</url>
+          <line>165</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

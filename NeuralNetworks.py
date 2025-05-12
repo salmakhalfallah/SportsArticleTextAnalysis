@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import sklearn as sk
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, roc_curve, confusion_matrix, f1_score
+from sklearn.metrics import accuracy_score, roc_curve, f1_score, confusion_matrix, ConfusionMatrixDisplay
 
 # credits for confusion matrix code: Dennis Trimarchi
 
@@ -132,99 +132,7 @@ print(X)
 print(y)
 
 # subsetting data into training and testing data
-X_train, X_test, y_train, y_test = train_test_split(X, y, random_state= 42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 42)
 
-# first model is using K-NN
-# i'm not expecting great performance due to the amount of features in the dataset (despite large # of training examples)
-# it's also easily fooled by irrelevant attributes
-# i'm first going to work with KNN w/o normalization to see how the model performs
-
-# identifying the best K value for our dataset
-
-from sklearn.neighbors import KNeighborsClassifier
-
-scores = []
-best_k = 0
-best_score = 0
-best_model = None
-for k in range(1, 100):
-    KNN = KNeighborsClassifier(n_neighbors = k)
-    KNN.fit(X_train, y_train)
-    y_pred = KNN.predict(X_test)
-    accuracy = accuracy_score(y_test, y_pred)
-    scores.append(accuracy)
-
-    if accuracy > best_score:
-        best_k = k
-        best_score = accuracy
-        best_model = KNN
-
-# printing scores, the best score, and the depth of the best score
-
-print("Scores: ", scores)
-print("Best score: ", max(scores))
-print("Best k: ", best_k)
-
-plt.plot(range(1,100), scores)
-plt.xlabel('k')
-plt.ylabel('accuracy')
-plt.title('KNN Accuracy vs. K')
-plt.show()
-
-# training model here
-
-y_pred = KNN.predict(X_test)
-y_pred_train = KNN.predict(X_train)
-
-from sklearn import metrics
-
-train_accuracy = metrics.accuracy_score(y_train, y_pred_train)
-test_accuracy = metrics.accuracy_score(y_test, y_pred)
-
-# 84% training accuracy, 79% test accuracy... not bad. can we do better? let's try k = 20 instead of 10
-print(train_accuracy, test_accuracy)
-
-# when k = 20, train acc = 82%, test acc = 81%
-# this is better but not that much better
-
-# when k = 30, train acc = 81%, test acc = 79%
-# just as i suspected, this isn't the best training model for our data set.
-
-# but let's try normalizing the attributes!
-
-from sklearn import preprocessing
-scaler = preprocessing.StandardScaler().fit(X_train)
-
-X_train = scaler.transform(X_train)
-X_test = scaler.transform(X_test)
-
-KNN.fit(X_train, y_train)
-y_pred_norm = KNN.predict(X_test)
-y_pred_training_norm = KNN.predict(X_train)
-
-train_accuracy_norm = metrics.accuracy_score(y_train, y_pred_training_norm)
-test_accuracy_norm = metrics.accuracy_score(y_test, y_pred_norm)
-
-# not better results with normalization.
-# figured as much, since the dimensionality is high for this dataset.
-
-print(test_accuracy_norm, train_accuracy_norm)
-
-# plotting confusion matrix of standard KNN fit
-cm = confusion_matrix(y_test, y_pred, labels  = KNN.classes_)
-print(cm)
-
-labels = ["True Negative", "False Positive", "False Negative", "True Positive"]
-categories = y.unique()
-make_confusion_matrix(cm, group_names = labels, categories = categories, cmap = 'Blues', title = 'KNN Confusion Matrix', figsize= (4,4))
-plt.show()
-
-# plotting confusion matrix of normalized KNN fit
-cm_norm = confusion_matrix(y_test, y_pred_norm, labels  = KNN.classes_)
-print(cm_norm)
-
-labels = ["True Negative", "False Positive", "False Negative", "True Positive"]
-categories = y.unique()
-make_confusion_matrix(cm_norm, group_names = labels, categories = categories, cmap = 'Blues', title = 'KNN Normalized Confusion Matrix', figsize= (4,4))
-plt.show()
+# my last model for this project is going to be neural networks
 
