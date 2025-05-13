@@ -148,11 +148,12 @@ naive = MultinomialNB()
 naive.fit(X_train, y_train)
 y_pred = naive.predict(X_test)
 y_pred_train = naive.predict(X_train)
-accuracy = naive.score(X_test, y_test)
-f1 = f1_score(y_test, y_pred, average='weighted')
 
-print(accuracy)
-print(f1)
+# trainig and test accuracy
+
+print("Training Accuracy: ", accuracy_score(y_train, y_pred_train))
+print("Testing Accuracy: ", accuracy_score(y_test, y_pred))
+
 
 # i am going to plot the confusion matrix to see how well the model performed
 
@@ -161,5 +162,5 @@ print(cm)
 
 labels = ["True Negative", "False Positive", "False Negative", "True Positive"]
 categories = y.unique()
-make_confusion_matrix(cm, group_names = labels, categories = categories, cmap = 'Blues', title = 'Naive Bayes Confusion Matrix', figsize= (4,4))
+make_confusion_matrix(cm, group_names = labels, categories = categories, cmap = 'Blues', title = 'Naive Bayes Confusion Matrix')
 plt.show()

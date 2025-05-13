@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="068bd094-3ce1-4755-ad56-68a1c5d030a0" name="Changes" comment="finished naive bayes, inputted a pre-made confusion matrix function (credits will be provided in report, but Dennis Trimarchi is the author of the function)">
-      <change afterPath="$PROJECT_DIR$/NeuralNetworks.py" afterDir="false" />
+    <list default="true" id="068bd094-3ce1-4755-ad56-68a1c5d030a0" name="Changes" comment="added hyper-parameter tuning in KNN">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DecisionTreesRandomForests.py" beforeDir="false" afterPath="$PROJECT_DIR$/DecisionTreesRandomForests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/KNN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NaiveBayes.py" beforeDir="false" afterPath="$PROJECT_DIR$/NaiveBayes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,22 +55,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Python.DecisionTreesRandomForests.executor": "Run",
-    "Python.KNN.executor": "Debug",
-    "Python.Main.executor": "Debug",
-    "Python.NaiveBayes.executor": "Run",
-    "Python.NeuralNetworks.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/salmakhalfallah/Library/CloudStorage/OneDrive-TheUniversityofTexasatDallas/UTD/Spring 2025/CS 4375/SportsDatasetProj_FinalProject"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Python.DecisionTreesRandomForests.executor&quot;: &quot;Run&quot;,
+    &quot;Python.KNN.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.NaiveBayes.executor&quot;: &quot;Run&quot;,
+    &quot;Python.NeuralNetworks.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/salmakhalfallah/Library/CloudStorage/OneDrive-TheUniversityofTexasatDallas/UTD/Spring 2025/CS 4375/SportsDatasetProj_FinalProject&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -179,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746810172104</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added hyper-parameter tuning in KNN">
+      <option name="closed" value="true" />
+      <created>1747015633876</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1747015633876</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,17 +208,7 @@
     <MESSAGE value="performed decision tree classification, including testing to find the best max depth for our dataset. finally, visualized errors and best tree" />
     <MESSAGE value="noticed some issues in making one singular file, created separate files for each model. also started naive bayes!" />
     <MESSAGE value="finished naive bayes, inputted a pre-made confusion matrix function (credits will be provided in report, but Dennis Trimarchi is the author of the function)" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished naive bayes, inputted a pre-made confusion matrix function (credits will be provided in report, but Dennis Trimarchi is the author of the function)" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/KNN.py</url>
-          <line>165</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="added hyper-parameter tuning in KNN" />
+    <option name="LAST_COMMIT_MESSAGE" value="added hyper-parameter tuning in KNN" />
   </component>
 </project>

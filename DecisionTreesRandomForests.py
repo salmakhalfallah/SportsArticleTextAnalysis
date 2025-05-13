@@ -7,6 +7,9 @@ from sklearn.model_selection import train_test_split
 from sklearn import metrics
 from sklearn.metrics import accuracy_score, roc_curve, confusion_matrix, f1_score
 
+from KNN import test_accuracy
+
+
 # credits for confusion matrix code: Dennis Trimarchi
 
 def make_confusion_matrix(cf,
@@ -146,7 +149,7 @@ best_fit = None
 # i want to see how the depth of the tree affects the accuracy of the model
 # i am storing the best model and score as well as all the scores for plotting
 
-for d in range(1,20):
+for d in range(1,100):
     dtree = DecisionTreeClassifier(random_state = 42, max_depth=d)
     dtree.fit(X_train, y_train)
     score = metrics.accuracy_score(y_test, dtree.predict(X_test))
@@ -164,16 +167,34 @@ print("Depth of best score: ")
 print(scores.index(best_score) + 1)
 
 # plotting the scores against the depth of the tree, where does the chart peak?
-plt.plot(range(1,20), scores)
+plt.plot(range(1,100), scores)
 plt.xlabel('max depth')
 plt.ylabel('score')
 plt.title('Decision Tree Scores Against Depth')
+plt.figure(figsize=(8,6))
 plt.show()
 
 # plotting the decision tree of the best fit
 plt.figure(figsize=(20,10))
 plot_tree(best_fit, filled = True, feature_names = X.columns, class_names = y.unique())
 plt.title('Best DTree Fit')
+plt.show()
+
+# training and testing scores
+
+train_accuracy = best_fit.score(X_train, y_train)
+test_accuracy = best_fit.score(X_test, y_test)
+
+print("Train Accuracy: ", train_accuracy)
+print("Test Accuracy: ", test_accuracy)
+
+# plotting the confusion matrix
+
+y_pred = best_fit.predict(X_test)
+cm = confusion_matrix(y_test, y_pred, labels = best_fit.classes_)
+labels = ["True Negative", "False Positive", "False Negative", "True Positive"]
+categories = y.unique()
+make_confusion_matrix(cm, group_names = labels, categories = categories, cmap = 'Blues', title = 'Decision Tree Confusion Matrix')
 plt.show()
 
 # plotting feature importance in the decision tree
@@ -233,9 +254,23 @@ plt.figure(figsize=(20,10))
 plot_tree(best_rfc_fit.estimators_[0], filled = True, feature_names = X.columns, class_names = y.unique())
 plt.show()
 
+# testing and training accuracy
+
+train_accuracy_rfc = best_rfc_fit.score(X_train, y_train)
+test_accuracy_rfc = best_rfc_fit.score(X_test, y_test)
+print("RFC Train Accuracy: ", train_accuracy_rfc)
+print("RFC Test Accuracy: ", test_accuracy_rfc)
+
+# plotting confusion matrix
+
+y_pred_RFC = best_rfc_fit.predict(X_test)
+cm_RFC = confusion_matrix(y_test, y_pred_RFC, labels = best_rfc_fit.classes_)
+make_confusion_matrix(cm_RFC, group_names = labels, categories = categories, cmap = 'Blues', title = 'Random Forest Confusion Matrix')
+plt.show()
+
+
 # plotting feature importances
 # important for answering our question of what features are most important in our dataset
-
 plt.figure(figsize=(20,10))
 plt.bar(X.columns, best_rfc_fit.feature_importances_)
 plt.xlabel('Features')

@@ -134,6 +134,12 @@ print(y)
 # subsetting data into training and testing data
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state= 42)
 
+plt.hist(y)
+plt.xlabel('Label')
+plt.ylabel('Count')
+plt.title('Label Distribution')
+plt.show()
+
 # first model is using K-NN
 # i'm not expecting great performance due to the amount of features in the dataset (despite large # of training examples)
 # it's also easily fooled by irrelevant attributes
@@ -165,6 +171,7 @@ print("Scores: ", scores)
 print("Best score: ", max(scores))
 print("Best k: ", best_k)
 
+plt.figure(figsize = (8, 6))
 plt.plot(range(1,100), scores)
 plt.xlabel('k')
 plt.ylabel('accuracy')
@@ -172,6 +179,7 @@ plt.title('KNN Accuracy vs. K')
 plt.show()
 
 # training model here
+KNN = best_model
 
 y_pred = KNN.predict(X_test)
 y_pred_train = KNN.predict(X_train)
@@ -180,15 +188,8 @@ from sklearn import metrics
 
 train_accuracy = metrics.accuracy_score(y_train, y_pred_train)
 test_accuracy = metrics.accuracy_score(y_test, y_pred)
-
-# 84% training accuracy, 79% test accuracy... not bad. can we do better? let's try k = 20 instead of 10
-print(train_accuracy, test_accuracy)
-
-# when k = 20, train acc = 82%, test acc = 81%
-# this is better but not that much better
-
-# when k = 30, train acc = 81%, test acc = 79%
-# just as i suspected, this isn't the best training model for our data set.
+print("Train accuracy: ", train_accuracy)
+print("Test accuracy: ", test_accuracy)
 
 # but let's try normalizing the attributes!
 
@@ -208,7 +209,8 @@ test_accuracy_norm = metrics.accuracy_score(y_test, y_pred_norm)
 # not better results with normalization.
 # figured as much, since the dimensionality is high for this dataset.
 
-print(test_accuracy_norm, train_accuracy_norm)
+print("Train accuracy (normalized): ", train_accuracy_norm)
+print("Test accuracy (normalized): ", test_accuracy_norm)
 
 # plotting confusion matrix of standard KNN fit
 cm = confusion_matrix(y_test, y_pred, labels  = KNN.classes_)
@@ -216,7 +218,7 @@ print(cm)
 
 labels = ["True Negative", "False Positive", "False Negative", "True Positive"]
 categories = y.unique()
-make_confusion_matrix(cm, group_names = labels, categories = categories, cmap = 'Blues', title = 'KNN Confusion Matrix', figsize= (4,4))
+make_confusion_matrix(cm, group_names = labels, categories = categories, cmap = 'Blues', title = 'KNN Confusion Matrix')
 plt.show()
 
 # plotting confusion matrix of normalized KNN fit
@@ -225,6 +227,6 @@ print(cm_norm)
 
 labels = ["True Negative", "False Positive", "False Negative", "True Positive"]
 categories = y.unique()
-make_confusion_matrix(cm_norm, group_names = labels, categories = categories, cmap = 'Blues', title = 'KNN Normalized Confusion Matrix', figsize= (4,4))
+make_confusion_matrix(cm_norm, group_names = labels, categories = categories, cmap = 'Blues', title = 'KNN Normalized Confusion Matrix')
 plt.show()
 
